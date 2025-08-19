@@ -10,6 +10,7 @@ import Quickshell.Io
 import Quickshell.Services.Mpris
 import Quickshell.Wayland
 import Quickshell.Hyprland
+import "../mediaControls"
 
 Scope {
     id: root
@@ -114,7 +115,7 @@ Scope {
             implicitWidth: root.widgetWidth
             implicitHeight: playerColumnLayout.implicitHeight
             color: "transparent"
-            WlrLayershell.namespace: "quickshell:mediaControls"
+            WlrLayershell.namespace: "quickshell:mediaControlsBR"
 
             anchors {
                 bottom: true
@@ -122,9 +123,9 @@ Scope {
             }
             margins {
                 top: Config.options.bar.vertical ? ((mediaControlsRoot.screen.height / 2) - widgetHeight * 1.5) : Appearance.sizes.barHeight
-                bottom: Appearance.sizes.barHeight
+                bottom: 0//Appearance.sizes.barHeight
                 left: Config.options.bar.vertical ? Appearance.sizes.barHeight : ((mediaControlsRoot.screen.width / 2) - (osdWidth / 2) - widgetWidth)
-                right: Appearance.sizes.barHeight
+                right: 0//Appearance.sizes.barHeight
             }
 
             mask: Region {
@@ -133,12 +134,7 @@ Scope {
 
             ColumnLayout {
                 id: playerColumnLayout
-                anchors.top: parent.top
-                anchors.bottom: parent.bottom
-                x: (mediaControlsRoot.screen.width / 1.4)  // Bottom right of screen (no clue why / 1.4 works instead of just width)
-                    - (osdWidth / 2)                     // Dodge OSD
-                    - (widgetWidth)                      // Account for widget width
-                    + (Appearance.sizes.elevationMargin) // It's fine for shadows to overlap
+                anchors.fill: parent
                 spacing: -Appearance.sizes.elevationMargin // Shadow overlap okay
 
                 Repeater {
@@ -158,7 +154,7 @@ Scope {
     }
 
     IpcHandler {
-        target: "mediaControls"
+        target: "mediaControlsBR"
 
         function toggle(): void {
             mediaControlsLoader.active = !mediaControlsLoader.active;
