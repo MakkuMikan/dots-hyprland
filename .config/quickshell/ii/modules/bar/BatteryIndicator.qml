@@ -12,6 +12,7 @@ MouseArea {
     readonly property bool isPluggedIn: Battery.isPluggedIn
     readonly property real percentage: Battery.percentage
     readonly property bool isLow: percentage <= Config.options.battery.low / 100
+    readonly property bool conservationActive: Battery.conservationActive
 
     implicitWidth: batteryProgress.implicitWidth
     implicitHeight: Appearance.sizes.barHeight
@@ -39,7 +40,7 @@ MouseArea {
                     Layout.leftMargin: -2
                     Layout.rightMargin: -2
                     fill: 1
-                    text: "bolt"
+                    text: (conservationActive ? "energy_savings_leaf" : "bolt")
                     iconSize: Appearance.font.pixelSize.smaller
                     visible: isCharging && percentage < 1 // TODO: animation
                 }

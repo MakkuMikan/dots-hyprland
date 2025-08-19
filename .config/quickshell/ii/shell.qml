@@ -38,6 +38,7 @@ ShellRoot {
     property bool enableDock: true
     property bool enableLock: true
     property bool enableMediaControls: true
+    property bool enableMediaControlsBR: true
     property bool enableNotificationPopup: true
     property bool enableOnScreenDisplayBrightness: true
     property bool enableOnScreenDisplayVolume: true
@@ -65,6 +66,7 @@ ShellRoot {
     LazyLoader { active: enableDock && Config.options.dock.enable; component: Dock {} }
     LazyLoader { active: enableLock; component: Lock {} }
     LazyLoader { active: enableMediaControls; component: MediaControls {} }
+    LazyLoader { active: enableMediaControlsBR; component: MediaControlsBR {} }
     LazyLoader { active: enableNotificationPopup; component: NotificationPopup {} }
     LazyLoader { active: enableOnScreenDisplayBrightness; component: OnScreenDisplayBrightness {} }
     LazyLoader { active: enableOnScreenDisplayVolume; component: OnScreenDisplayVolume {} }
