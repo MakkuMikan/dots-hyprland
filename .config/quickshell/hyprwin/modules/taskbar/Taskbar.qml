@@ -123,10 +123,6 @@ Scope { // Scope
                             //         }
                             //     }
                             // }
-                            TaskbarApps {
-                                id: taskbarApps
-                                buttonPadding: taskbarRow.padding
-                            }
                             TaskbarButton {
                                 Layout.fillHeight: true
                                 onClicked: GlobalStates.overviewOpen = !GlobalStates.overviewOpen
@@ -139,6 +135,10 @@ Scope { // Scope
                                     text: "apps"
                                     color: Appearance.colors.colOnLayer0
                                 }
+                            }
+                            TaskbarApps {
+                                id: taskbarApps
+                                buttonPadding: taskbarRow.padding
                             }
                         }
                     }
