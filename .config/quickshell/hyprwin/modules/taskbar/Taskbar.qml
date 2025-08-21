@@ -36,7 +36,7 @@ Scope { // Scope
                 property bool superShow: false
                 property bool mustShow: hoverRegion.containsMouse || superShow
                 exclusionMode: ExclusionMode.Ignore
-                exclusiveZone: (Config?.options.bar.autoHide.enable && (!mustShow || !Config?.options.bar.autoHide.pushWindows)) ? 0 : Appearance.sizes.baseBarHeight + (Config.options.bar.cornerStyle === 1 ? Appearance.sizes.hyprlandGapsOut : 0)
+                exclusiveZone: (Config?.options.taskbar.autoHide.enable && (!mustShow || !Config?.options.taskbar.autoHide.pushWindows)) ? 0 : Appearance.sizes.baseBarHeight + (Config.options.taskbar.cornerStyle === 1 ? Appearance.sizes.hyprlandGapsOut : 0)
                 WlrLayershell.namespace: "quickshell:bar"
                 implicitHeight: Appearance.sizes.barHeight + Appearance.rounding.screenRounding
                 mask: Region {
@@ -45,8 +45,8 @@ Scope { // Scope
                 color: "transparent"
 
                 anchors {
-                    top: Config.options.bar.top
-                    bottom: !Config.options.bar.top
+                    top: Config.options.taskbar.top
+                    bottom: !Config.options.taskbar.top
                     left: true
                     right: true
                 }
@@ -74,7 +74,7 @@ Scope { // Scope
                             left: parent.left
                             top: parent.top
                             bottom: undefined
-                            topMargin: (Config?.options.bar.autoHide.enable && !taskbarRoot.mustShow) ? -Appearance.sizes.barHeight : 0
+                            topMargin: (Config?.options.taskbar.autoHide.enable && !taskbarRoot.mustShow) ? -Appearance.sizes.barHeight : 0
                             bottomMargin: 0
                         }
 
