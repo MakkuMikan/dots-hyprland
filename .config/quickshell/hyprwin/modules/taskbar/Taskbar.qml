@@ -38,7 +38,7 @@ Scope { // Scope
                 exclusionMode: ExclusionMode.Ignore
                 exclusiveZone: (Config?.options.taskbar.autoHide.enable && (!mustShow || !Config?.options.taskbar.autoHide.pushWindows)) ? 0 : Appearance.sizes.baseBarHeight + (Config.options.taskbar.cornerStyle === 1 ? Appearance.sizes.hyprlandGapsOut : 0)
                 WlrLayershell.namespace: "quickshell:bar"
-                implicitHeight: Appearance.sizes.barHeight + Appearance.rounding.screenRounding
+                implicitHeight: Appearance.sizes.barHeight// + Appearance.rounding.screenRounding
                 mask: Region {
                     item: hoverMaskRegion
                 }
