@@ -193,18 +193,6 @@ Singleton {
                 property bool autoKillTrays: false
             }
 
-            property JsonObject dock: JsonObject {
-                property bool enable: false
-                property bool monochromeIcons: true
-                property real height: 60
-                property real hoverRegionHeight: 2
-                property bool pinnedOnStartup: false
-                property bool hoverToReveal: true // When false, only reveals on empty workspace
-                property list<string> pinnedApps: [ // IDs of pinned entries
-                    "org.kde.dolphin", "kitty",]
-                property list<string> ignoredAppRegexes: []
-            }
-
             property JsonObject interactions: JsonObject {
                 property JsonObject scrolling: JsonObject {
                     property bool fasterTouchpadScroll: false // Enable faster scrolling with touchpad
@@ -289,6 +277,27 @@ Singleton {
                         property string username: "[unset]"
                     }
                 }
+            }
+
+            property JsonObject taskbar: JsonObject {
+                property JsonObject autoHide: JsonObject {
+                    property bool enable: false
+                    property bool pushWindows: false
+                    property JsonObject showWhenPressingSuper: JsonObject {
+                        property bool enable: true
+                        property int delay: 140
+                    }
+                }
+                property bool top: false // Instead of bottom
+                property list<string> screenList: [] // List of names, like "eDP-1", find out with 'hyprctl monitors' command
+                property bool leftAlign: false // Instead of center
+                property real height: 48
+                property real hoverRegionHeight: 2
+                property bool pinnedOnStartup: false
+                property bool hoverToReveal: true // When false, only reveals on empty workspace
+                property list<string> pinnedApps: [ // IDs of pinned entries
+                    "org.kde.dolphin", "kitty",]
+                property list<string> ignoredAppRegexes: []
             }
 
             property JsonObject time: JsonObject {
