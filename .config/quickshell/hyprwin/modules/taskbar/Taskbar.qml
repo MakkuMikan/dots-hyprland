@@ -68,7 +68,7 @@ Scope { // Scope
                     Item { // Wrapper for the taskbar background
                         id: taskbarBackground
 
-                        implicitHeight: Appearance.sizes.barHeight
+                        implicitHeight: Appearance.sizes.baseBarHeight
                         anchors {
                             right: parent.right
                             left: parent.left
@@ -93,7 +93,7 @@ Scope { // Scope
                             color: Appearance.colors.colLayer0
                             border.width: 1
                             border.color: Appearance.colors.colLayer0Border
-                            radius: Appearance.rounding.large
+                            // radius: Appearance.rounding.large
                         }
 
                         RowLayout {
