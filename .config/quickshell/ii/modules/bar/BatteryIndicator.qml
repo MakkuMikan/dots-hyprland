@@ -23,7 +23,19 @@ MouseArea {
         id: batteryProgress
         anchors.centerIn: parent
         value: percentage
-        highlightColor: (isLow && !isCharging) ? Appearance.m3colors.m3error : Appearance.colors.colOnSecondaryContainer
+        highlightColor: getHighlightColor()
+
+        function getHighlightColor() {
+            if (isLow && !isCharging) {
+                return Appearance.m3colors.m3error;
+            }
+
+            if (conservationActive) {
+                return Appearance.m3colors.m3success;
+            }
+
+            return Appearance.colors.colOnSecondaryContainer;
+        }
 
         Item {
             anchors.centerIn: parent
@@ -42,7 +54,7 @@ MouseArea {
                     fill: 1
                     text: (conservationActive ? "energy_savings_leaf" : "bolt")
                     iconSize: Appearance.font.pixelSize.smaller
-                    visible: isCharging && percentage < 1 // TODO: animation
+                    visible: (isPluggedIn && percentage < 1)
                 }
                 StyledText {
                     Layout.alignment: Qt.AlignVCenter

@@ -11,7 +11,8 @@ Singleton {
     property bool available: UPower.displayDevice.isLaptopBattery
     property var chargeState: UPower.displayDevice.state
     property bool isCharging: chargeState == UPowerDeviceState.Charging
-    property bool isPluggedIn: isCharging || chargeState == UPowerDeviceState.PendingCharge
+    property bool conservationActive: chargeState == UPowerDeviceState.PendingCharge
+    property bool isPluggedIn: isCharging || conservationActive
     property real percentage: UPower.displayDevice.percentage
     readonly property bool allowAutomaticSuspend: Config.options.battery.automaticSuspend
 
