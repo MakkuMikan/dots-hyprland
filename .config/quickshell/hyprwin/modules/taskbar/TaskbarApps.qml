@@ -23,7 +23,7 @@ Item {
     property bool requestTaskbarShow: previewPopup.show
 
     Layout.fillHeight: true
-    Layout.topMargin: Appearance.sizes.hyprlandGapsOut // why does this work
+    //Layout.topMargin: Appearance.sizes.hyprlandGapsOut // why does this work
     implicitWidth: listView.implicitWidth
     
     StyledListView {
