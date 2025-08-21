@@ -24,17 +24,7 @@ TaskbarButton {
     property var desktopEntry: DesktopEntries.byId(appToplevel.appId)
     enabled: !isSeparator
     implicitWidth: isSeparator ? 1 : implicitHeight - topInset - bottomInset
-
-    Loader {
-        active: isSeparator
-        anchors {
-            fill: parent
-            topMargin: taskbarVisualBackground.margin + taskbarRow.padding + Appearance.rounding.normal
-            bottomMargin: taskbarVisualBackground.margin + taskbarRow.padding + Appearance.rounding.normal
-        }
-        sourceComponent: TaskbarSeparator {}
-    }
-
+    
     Loader {
         anchors.fill: parent
         active: appToplevel.toplevels.length > 0
