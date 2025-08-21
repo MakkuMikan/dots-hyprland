@@ -88,8 +88,8 @@ Scope { // Scope
                             id: taskbarVisualBackground
                             property real margin: Appearance.sizes.elevationMargin
                             anchors.fill: parent
-                            anchors.topMargin: Appearance.sizes.elevationMargin
-                            anchors.bottomMargin: Appearance.sizes.hyprlandGapsOut
+                            // anchors.topMargin: Appearance.sizes.elevationMargin
+                            // anchors.bottomMargin: Appearance.sizes.hyprlandGapsOut
                             color: Appearance.colors.colLayer0
                             border.width: 1
                             border.color: Appearance.colors.colLayer0Border
