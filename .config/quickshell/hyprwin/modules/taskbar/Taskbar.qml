@@ -102,7 +102,7 @@ Scope { // Scope
                             anchors.bottom: parent.bottom
                             anchors.horizontalCenter: parent.horizontalCenter
                             spacing: 3
-                            property real padding: 5
+                            property real padding: 0//5
 
                             // VerticalButtonGroup {
                             //     Layout.topMargin: Appearance.sizes.hyprlandGapsOut // why does this work
