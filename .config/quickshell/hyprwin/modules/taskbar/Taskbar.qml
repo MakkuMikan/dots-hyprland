@@ -123,12 +123,10 @@ Scope { // Scope
                                     }
                                 }
                             }
-                            TaskbarSeparator {}
                             TaskbarApps {
                                 id: taskbarApps
                                 buttonPadding: taskbarRow.padding
                             }
-                            TaskbarSeparator {}
                             TaskbarButton {
                                 Layout.fillHeight: true
                                 onClicked: GlobalStates.overviewOpen = !GlobalStates.overviewOpen
